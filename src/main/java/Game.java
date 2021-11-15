@@ -31,9 +31,10 @@ public class Game {
                 draw();
                 KeyStroke key = screen.readInput();
                 int game_continues = processKey(key);
-                if (game_continues == 0)
+                if (game_continues == 0) {
                     screen.close();
                     break;
+                }
             }
 
         }
