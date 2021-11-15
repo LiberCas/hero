@@ -13,7 +13,7 @@ public class Wall {
     public Position getPosition(){
         return position;
     }
-    public void draw(TextGraphics graphics){
+    public void draw(@org.jetbrains.annotations.NotNull TextGraphics graphics){
         graphics.setForegroundColor(TextColor.Factory.fromString("#BD8142"));
         graphics.putString(new TerminalPosition(position.getX(), position.getY()),symbol);
     }
