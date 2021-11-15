@@ -24,7 +24,7 @@ public class Game {
                 screen.setCursorPosition(null); // we don't need a cursor
                 screen.startScreen(); // screens must be started
                 screen.doResizeIfNecessary(); // resize screen if necessary
-                arena = new Arena(20, 20);
+                arena = new Arena(40, 20);
         }
         public void run() throws IOException {
             while(true) {
@@ -40,7 +40,7 @@ public class Game {
         }
         private void draw() throws IOException {
             screen.clear();
-            arena.draw(screen);
+            arena.draw(screen.newTextGraphics());
             screen.refresh();
         }
     }
