@@ -5,12 +5,9 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
 
-public class Hero {
-    private Position position;
-    private String symbol;
+public class Hero extends Element{
     public Hero(int x, int y){
-        symbol = "O";
-        position = new Position(x, y);
+        super(x, y, "#FF0C0C", "O");
     }
     //Movement methods
     //-------------------------------------
@@ -30,9 +27,9 @@ public class Hero {
         return new Position(position.getX()+1, position.getY());
     }
     //------------------------------------
+    @Override
     public void draw(TextGraphics graphics){
-        graphics.setForegroundColor(TextColor.Factory.fromString("#BD8142"));
         graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(new TerminalPosition(position.getX(), position.getY()),symbol);
+        super.draw(graphics);
     }
 }
