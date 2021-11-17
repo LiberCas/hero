@@ -7,7 +7,7 @@ import com.googlecode.lanterna.screen.Screen;
 
 public class Hero extends Element{
     public Hero(int x, int y){
-        super(x, y, "FF0C0C", "O");
+        super(x, y, "#FF0C0C", "O");
     }
     //Movement methods
     //-------------------------------------

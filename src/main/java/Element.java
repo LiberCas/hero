@@ -2,7 +2,7 @@ import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
-public class Element {
+abstract class Element {
     protected Position position;
     protected String symbol;
     protected String colour;
@@ -14,7 +14,7 @@ public class Element {
     public Position getPosition() {
         return position;
     }
-    public void draw(TextGraphics graphics){
+    public void draw (TextGraphics graphics){
         graphics.setForegroundColor(TextColor.Factory.fromString(colour));
         graphics.putString(new TerminalPosition(position.getX(), position.getY()),symbol);
     }
