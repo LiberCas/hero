@@ -31,7 +31,18 @@ public class Game {
                 draw();
                 KeyStroke key = screen.readInput();
                 int game_continues = processKey(key);
+                if (game_continues == 2){
+                    System.out.print("You Won!!!");
+                    screen.close();
+                    break;
+                }
+                if (game_continues == -1) {
+                    System.out.print("You Quit");
+                    screen.close();
+                    break;
+                }
                 if (game_continues == 0) {
+                    System.out.print("You Lost!");
                     screen.close();
                     break;
                 }
